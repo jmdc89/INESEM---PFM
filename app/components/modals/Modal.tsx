@@ -48,6 +48,15 @@ interface ModalProps {
         }, 300)
       }, [onClose, disabled]);
 
+      
+      const handleSubmit = useCallback(() => {
+        if (disabled) {
+          return;
+        }
+    
+        onSubmit();
+      }, [onSubmit, disabled]);
+
 
 
     return (
