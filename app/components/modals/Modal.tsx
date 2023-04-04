@@ -37,6 +37,17 @@ interface ModalProps {
         setShowModal(isOpen);
       }, [isOpen]);
 
+      const handleClose = useCallback(() => {
+        if (disabled) {
+          return;
+        }
+      
+        setShowModal(false);
+        setTimeout(() => {
+          onClose();
+        }, 300)
+      }, [onClose, disabled]);
+
 
 
     return (
