@@ -15,47 +15,59 @@ interface ModalProps {
     disabled?: boolean;
     secondaryAction?: () => void;
     secondaryActionLabel?: string;
-  }
+}
 
 
-  const Modal: React.FC<ModalProps> = ({ 
-    isOpen, 
-    onClose, 
-    onSubmit, 
-    title, 
-    body, 
-    actionLabel, 
-    footer, 
+const Modal: React.FC<ModalProps> = ({
+    isOpen,
+    onClose,
+    onSubmit,
+    title,
+    body,
+    actionLabel,
+    footer,
     disabled,
     secondaryAction,
     secondaryActionLabel
-  }) => {
+}) => {
 
     const [showModal, setShowModal] = useState(isOpen);
 
     useEffect(() => {
         setShowModal(isOpen);
-      }, [isOpen]);
+    }, [isOpen]);
 
-      const handleClose = useCallback(() => {
+    const handleClose = useCallback(() => {
         if (disabled) {
-          return;
+            return;
         }
-      
+
         setShowModal(false);
         setTimeout(() => {
-          onClose();
+            onClose();
         }, 300)
-      }, [onClose, disabled]);
+    }, [onClose, disabled]);
 
-      
-      const handleSubmit = useCallback(() => {
+
+    const handleSubmit = useCallback(() => {
         if (disabled) {
+            return;
+        }
+
+        onSubmit();
+    }, [onSubmit, disabled]);
+
+    const handleSecondaryAction = useCallback(() => {
+        if (disabled || !secondaryAction) {
           return;
         }
     
-        onSubmit();
-      }, [onSubmit, disabled]);
+        secondaryAction();
+      }, [secondaryAction, disabled]);
+
+      if (!isOpen) {
+        return null;
+      }
 
 
 
