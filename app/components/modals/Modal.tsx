@@ -30,6 +30,15 @@ interface ModalProps {
     secondaryAction,
     secondaryActionLabel
   }) => {
+
+    const [showModal, setShowModal] = useState(isOpen);
+
+    useEffect(() => {
+        setShowModal(isOpen);
+      }, [isOpen]);
+
+
+
     return (
         <div></div>
     )
