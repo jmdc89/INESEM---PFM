@@ -12,6 +12,7 @@ import {
 
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import Modal from "./Modal";
+import Heading from "../Heading";
 
 const RegisterModal = () => {
 
@@ -49,7 +50,7 @@ const RegisterModal = () => {
 
       const bodyContent = (
         <div className="flex flex-col gap-4">
-          Hello Modal Body!
+          <Heading />
         </div>
       )
 
