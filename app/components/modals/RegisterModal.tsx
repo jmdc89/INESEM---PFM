@@ -55,7 +55,14 @@ const RegisterModal = () => {
             title="Welcome to Airbnb"
             subtitle="Create an account!"
           />
-          <Input />
+          <Input
+            id="email"
+            label="Email"
+            disabled={isLoading}
+            register={register}
+            errors={errors}
+            required
+          />
         </div>
       )
 
