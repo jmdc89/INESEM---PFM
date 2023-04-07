@@ -3,6 +3,7 @@ import ClientOnly from "./components/ClientOnly";
 import Navbar from "./components/navbar/Navbar";
 import './globals.css'
 import RegisterModal from "./components/modals/RegisterModal";
+import ToasterProvider from "./providers/ToasterProvider";
 
 export const metadata = {
   title: 'Inesem pfm',
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <ClientOnly>
+          <ToasterProvider />
           <RegisterModal />
           <Navbar />
         </ClientOnly>
