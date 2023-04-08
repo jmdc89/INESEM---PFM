@@ -122,8 +122,6 @@ const RegisterModal = () => {
         </div>
       )
 
-
-
     return (
         <Modal
           disabled={isLoading}
