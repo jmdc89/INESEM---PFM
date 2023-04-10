@@ -44,7 +44,7 @@ const RegisterModal = () => {
            registerModal.onClose();
         })
         .catch((error) => {
-          toast.error('Something went wrong');
+          toast.error('Algo ha ido mal');
         })
         .finally(() => {
           setIsLoading(false);
@@ -54,8 +54,8 @@ const RegisterModal = () => {
       const bodyContent = (
         <div className="flex flex-col gap-4">
           <Heading
-            title="Welcome to Airbnb"
-            subtitle="Create an account!"
+            title="Bienvenido a Inesem"
+            subtitle="Crea una cuenta!"
           />
           <Input
             id="email"
@@ -67,7 +67,7 @@ const RegisterModal = () => {
           />
           <Input
             id="name"
-            label="Name"
+            label="Nombre"
             disabled={isLoading}
             register={register}
             errors={errors}
@@ -90,13 +90,13 @@ const RegisterModal = () => {
           <hr />
           <Button 
             outline 
-            label="Continue with Google"
+            label="Continua con Google"
             icon={FcGoogle}
             onClick={() => {}} 
           />
           <Button 
             outline 
-            label="Continue with Github"
+            label="Continua con Github"
             icon={AiFillGithub}
             onClick={() => {}}
           />
@@ -108,7 +108,7 @@ const RegisterModal = () => {
               font-light
             "
           >
-            <p>Already have an account?
+            <p>Ya tienes una cuenta?
               <span 
                 onClick={() => {}}
                 className="
