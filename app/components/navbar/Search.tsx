@@ -32,7 +32,7 @@ const Search = () => {
                      px-6
                    "
                 >
-                    Anywhere
+                    Donde?
                 </div>
                 <div
                     className="
@@ -46,7 +46,7 @@ const Search = () => {
                      text-center
                    "
                 >
-                    Anyweek
+                    Cuando?
                 </div>
                 <div
                     className="
@@ -61,7 +61,7 @@ const Search = () => {
                   "
                 >
 
-                    <div className="hidden sm:block">Add guest</div>
+                    <div className="hidden sm:block">Nuevo huesped</div>
                     <div
                         className="
                     p-2 
