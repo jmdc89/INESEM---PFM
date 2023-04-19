@@ -18,6 +18,7 @@ import { IoDiamond } from 'react-icons/io5';
 import { MdOutlineVilla } from 'react-icons/md';
 
 import Container from '../Container';
+import CategoryBox from '../CategoryBox';
 
 export const categories = [
     {
