@@ -17,9 +17,24 @@ import { BsSnow } from 'react-icons/bs';
 import { IoDiamond } from 'react-icons/io5';
 import { MdOutlineVilla } from 'react-icons/md';
 
+import Container from '../Container';
+
 const Categories = () => {
     return (
-        <div></div>
+        <Container>
+            <div
+                className="
+                pt-4
+                flex 
+                flex-row 
+                items-center 
+                justify-between
+                overflow-x-auto
+              "
+            >
+
+            </div>
+        </Container>
     )
 }
 
