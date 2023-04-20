@@ -19,7 +19,7 @@ import { MdOutlineVilla } from 'react-icons/md';
 import Container from '../Container';
 
 
-// import CategoryBox from '../CategoryBox';
+import CategoryBox from '../CategoryBox';
 
 export const categories = [
     {
@@ -112,7 +112,14 @@ const Categories = () => {
                 overflow-x-auto
               "
             >
-
+                {categories.map((item) => (
+                    <CategoryBox
+                        key={item.label}
+                        label={item.label}
+                        icon={item.icon}
+                        selected={category === item.label}
+                    />
+                ))}
             </div>
         </Container>
     )

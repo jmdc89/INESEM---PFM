@@ -1,4 +1,4 @@
-// 'use client'
+'use client'
 
 // import { useRouter, useSearchParams } from "next/navigation";
 // import { useCallback } from "react";
@@ -10,10 +10,10 @@
 // //     selected?: boolean;
 // //   }
 
-// const CategoryBox = () => {
-//     return (
-//         <div></div>
-//     )
-// }
+const CategoryBox = () => {
+    return (
+        <div></div>
+    )
+}
 
-// export default CategoryBox;
+export default CategoryBox;
