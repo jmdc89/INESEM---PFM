@@ -3,6 +3,7 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 import { IconType } from "react-icons";
+import qs from 'query-string';
 
 interface CategoryBoxProps {
     icon: IconType,
@@ -45,6 +46,7 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 
     return (
         <div
+            onClick={handleClick}
             className={`
         flex 
         flex-col 
