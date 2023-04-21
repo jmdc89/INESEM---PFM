@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 
 // import { usePathname, useSearchParams } from 'next/navigation';
 import { TbBeach, TbMountain, TbPool } from 'react-icons/tb';
@@ -117,7 +117,7 @@ const Categories = () => {
                         key={item.label}
                         label={item.label}
                         icon={item.icon}
-                        selected={category === item.label}
+                        // selected={category === item.label}
                     />
                 ))}
             </div>
