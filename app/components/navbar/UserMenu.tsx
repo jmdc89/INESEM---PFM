@@ -19,11 +19,21 @@ const UserMenu: React.FC<UserMenuProps> = ({
 }) => {
     const registerModal = useRegisterModal();
     const loginModal = useLoginModal();
+
+
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleOpen = useCallback(() => {
         setIsOpen((value) => !value);
     }, []);
+
+    const onRent = useCallback(() => {
+        if (!currentUser) {
+            return loginModal.onOpen();
+        }
+
+        // rentModal.onOpen();
+    }, [loginModal, currentUser]);
 
     return (
         <div
@@ -31,7 +41,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
         >
             <div className="flex flex-row items-center gap-y-3.5">
                 <div
-                    onClick={() => { }}
+                    onClick={onRent}
                     className="
                         hidden
                         md:block
@@ -67,7 +77,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                 >
                     <AiOutlineMenu />
                     <div className='hidden md:block'>
-                        <Avatar src={currentUser?.image}/>
+                        <Avatar src={currentUser?.image} />
                     </div>
                 </div>
             </div>
@@ -92,23 +102,23 @@ const UserMenu: React.FC<UserMenuProps> = ({
                             <>
                                 <MenuItem
                                     label="Mis viajes"
-                                    onClick={() => {}}
+                                    onClick={() => { }}
                                 />
                                 <MenuItem
                                     label="Mis favoritos"
-                                    onClick={() => {}}
+                                    onClick={() => { }}
                                 />
                                 <MenuItem
                                     label="Mis reservas"
-                                    onClick={() => {}}
+                                    onClick={() => { }}
                                 />
                                 <MenuItem
                                     label="Mis propiedades"
-                                    onClick={() => {}}
+                                    onClick={() => { }}
                                 />
                                 <MenuItem
                                     label="Inesem, mi hogar"
-                                    onClick={() => {}}
+                                    onClick={() => { }}
                                 />
                                 <hr />
                                 <MenuItem
