@@ -13,7 +13,7 @@ const RentModal = () => {
         onClose={rentModal.onClose}
         onSubmit={rentModal.onClose}
         actionLabel="Submit"
-        title="Encuentra tu casa"
+        title="Inesem, mi hogar"
     />
     );
 }

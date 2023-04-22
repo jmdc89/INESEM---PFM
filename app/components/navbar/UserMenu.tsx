@@ -9,6 +9,7 @@ import MenuItem from './MenuItem';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 import useLoginModal from '@/app/hooks/useLoginModal';
 import { SafeUser } from "@/app/types";
+import useRentModal from '@/app/hooks/useRentModal';
 
 interface UserMenuProps {
     currentUser?: SafeUser | null
@@ -19,7 +20,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
 }) => {
     const registerModal = useRegisterModal();
     const loginModal = useLoginModal();
-
+    const rentModal = useRentModal();
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -32,8 +33,8 @@ const UserMenu: React.FC<UserMenuProps> = ({
             return loginModal.onOpen();
         }
 
-        // rentModal.onOpen();
-    }, [loginModal, currentUser]);
+        rentModal.onOpen();
+    }, [loginModal, currentUser, rentModal]);
 
     return (
         <div
@@ -55,7 +56,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                         cursor-pointer
                     "
                 >
-                    Encuentra tu casa
+                    Inesem, mi hogar
                 </div>
                 <div
                     onClick={toggleOpen}
@@ -118,7 +119,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                                 />
                                 <MenuItem
                                     label="Inesem, mi hogar"
-                                    onClick={() => { }}
+                                    onClick={rentModal.onOpen}
                                 />
                                 <hr />
                                 <MenuItem
