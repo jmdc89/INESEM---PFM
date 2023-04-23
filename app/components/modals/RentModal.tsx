@@ -8,6 +8,7 @@ import { categories } from '../navbar/Categories';
 import Heading from "../Heading";
 import CategoryInput from "../inputs/CategoryInput";
 import { FieldValues, useForm } from "react-hook-form";
+import CountrySelect from "../inputs/CountrySelect";
 
 enum STEPS {
     CATEGORY = 0,
