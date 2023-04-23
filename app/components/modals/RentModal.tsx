@@ -3,7 +3,8 @@
 import { useMemo, useState } from "react";
 
 import useRentModal from "@/app/hooks/useRentModal";
-import Modal from "./Modal"
+import Modal from "./Modal";
+import { categories } from '../navbar/Categories';
 import Heading from "../Heading";
 
 enum STEPS {
@@ -61,7 +62,11 @@ const RentModal = () => {
                 overflow-y-auto
               " 
             >
-                
+                {categories.map((item) => (
+                    <div key={item.label} className="col-span-1">
+                        {item.label}
+                    </div>
+                ))}
             </div>
         </div>
     )
