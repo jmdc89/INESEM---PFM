@@ -24,28 +24,35 @@ const RentModal = () => {
 
     const [step, setStep] = useState(STEPS.CATEGORY);
 
-    const { 
-        register, 
+    const {
+        register,
         handleSubmit,
         setValue,
         watch,
         formState: {
-          errors,
+            errors,
         },
         reset,
-      } = useForm<FieldValues>({
+    } = useForm<FieldValues>({
         defaultValues: {
-          category: '',
-          location: null,
-          guestCount: 1,
-          roomCount: 1,
-          bathroomCount: 1,
-          imageSrc: '',
-          price: 1,
-          title: '',
-          description: '',
+            category: '',
+            location: null,
+            guestCount: 1,
+            roomCount: 1,
+            bathroomCount: 1,
+            imageSrc: '',
+            price: 1,
+            title: '',
+            description: '',
         }
-      });
+    });
+
+    const location = watch('location');
+    const category = watch('category');
+    const guestCount = watch('guestCount');
+    const roomCount = watch('roomCount');
+    const bathroomCount = watch('bathroomCount');
+    const imageSrc = watch('imageSrc');
 
     const onBack = () => {
         setStep((value) => value - 1);
@@ -65,11 +72,11 @@ const RentModal = () => {
 
     const secondaryActionLabel = useMemo(() => {
         if (step === STEPS.CATEGORY) {
-          return undefined
+            return undefined
         }
-    
+
         return 'Back'
-      }, [step]);
+    }, [step]);
 
     let bodyContent = (
         <div className="flex flex-col gap-8">
@@ -85,12 +92,12 @@ const RentModal = () => {
                 gap-3
                 max-h-[50vh]
                 overflow-y-auto
-              " 
+              "
             >
                 {categories.map((item) => (
                     <div key={item.label} className="col-span-1">
                         <CategoryInput
-                            onClick={() => {}}
+                            onClick={() => { }}
                             selected={false}
                             label={item.label}
                             icon={item.icon}
