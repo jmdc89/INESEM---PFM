@@ -6,6 +6,7 @@ import useRentModal from "@/app/hooks/useRentModal";
 import Modal from "./Modal";
 import { categories } from '../navbar/Categories';
 import Heading from "../Heading";
+import CategoryInput from "../inputs/CategoryInput";
 
 enum STEPS {
     CATEGORY = 0,
