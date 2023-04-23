@@ -117,12 +117,26 @@ const RentModal = () => {
         </div>
     )
 
+    if (step === STEPS.LOCATION) {
+        bodyContent = (
+            <div className="flex flex-col gap-8">
+                <Heading 
+                    title="Donde se encuentra tu lugar?"
+                    subtitle="Ayuda al huesped a encontrarte"
+                />
+                <CountrySelect
+
+                />
+            </div>
+        )
+    }
+
 
     return (
         <Modal
             isOpen={rentModal.isOpen}
             onClose={rentModal.onClose}
-            onSubmit={rentModal.onClose}
+            onSubmit={onNext}
             actionLabel={actionLabel}
             secondaryActionLabel={secondaryActionLabel}
             secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
