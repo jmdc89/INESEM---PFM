@@ -57,9 +57,9 @@ const RentModal = () => {
     const bathroomCount = watch('bathroomCount');
     const imageSrc = watch('imageSrc');
 
-    const Map = useMemo(() => dynamic(() => import('../Map'), { 
-        ssr: false 
-      }), [location]);
+    const Map = useMemo(() => dynamic(() => import('../Map'), {
+        ssr: false
+    }), [location]);
 
     const setCustomValue = (id: string, value: any) => {
         setValue(id, value, {
@@ -127,17 +127,48 @@ const RentModal = () => {
     if (step === STEPS.LOCATION) {
         bodyContent = (
             <div className="flex flex-col gap-8">
-                <Heading 
+                <Heading
                     title="Donde se encuentra tu lugar?"
                     subtitle="Ayuda al huesped a encontrarte"
                 />
                 <CountrySelect
-                    value={location} 
+                    value={location}
                     onChange={(value) => setCustomValue('location', value)}
                 />
                 <Map center={location?.latlng} />
             </div>
         );
+    }
+
+    if (step === STEPS.INFO) {
+        bodyContent = (
+            <div className="flex flex-col gap-8">
+                <Heading
+                    title="Comparte algunos detalles básicos sobre tu lugar"
+                    subtitle="¿Qué comodidades tienes?"
+                />
+                <Counter
+                    onChange={(value) => setCustomValue('guestCount', value)}
+                    value={guestCount}
+                    title="Invitados"
+                    subtitle="¿Cuántos invitados permites?"
+                />
+                <hr />
+                <Counter
+                    onChange={(value) => setCustomValue('roomCount', value)}
+                    value={roomCount}
+                    title="Habitaciones"
+                    subtitle="¿Cuántas habitaciones tienes?"
+                />
+                <hr />
+                <Counter
+                    onChange={(value) => setCustomValue('bathroomCount', value)}
+                    value={bathroomCount}
+                    title="Baños"
+                    subtitle="¿Cuántos baños tienes?"
+                />
+            </div>
+        )
     }
 
 
